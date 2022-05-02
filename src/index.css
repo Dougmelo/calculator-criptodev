@@ -3,17 +3,29 @@
 	--secondary: #8c38ff;
 	--dark: #131a26;
 	--light: #EEE;
+	--color-white: #fff;
+    --color-light-white: #eee;
+    --color-tomato: #d40640;
+    --color-purple-transparent: rgba(88, 24, 69, .9);
+    --color-pink-transparent: rgba(216, 14, 91, .9);
+    --color-orange: #ff3c00;
+    --color-light-black: #222;
+    --color-black: #000;
+    --shadow: rgba(0, 0, 0, .4);
 }
 
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
 	font-family: 'Fira Sans', sans-serif;
 }
 
 body {
-	background-color: var(--light);
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(to bottom right, var(--color-pink-transparent), var(--color-purple-transparent)), 
+	url(https://static.vecteezy.com/system/resources/previews/002/011/487/non_2x/blockchain-technology-design-on-blue-background-illustration-vector.jpg);
+	background-size:cover;
 }
 
 .App {
@@ -21,6 +33,7 @@ body {
 	min-height: 100vh;
 	align-items: center;
 	justify-content: center;
+	padding: 10px;
 }
 
 .calculator {
@@ -33,12 +46,25 @@ body {
 }
 
 .display {
-	padding: 16px;
+	padding: 22px;
 	text-align: right;
 	background-color: var(--dark);
 	color: var(--light);
-	font-size: 24px;
+	font-size: 23px;
 	font-weight: 300;
+}
+
+.display_result {
+	border-top: 1px solid var(--primary);
+	border-bottom: 1px solid var(--secondary);
+	height: 24px;
+	padding-top: 2px;
+	padding-right: 22px;
+	text-align: right;
+	background-color: var(--dark);
+	color: var(--light);
+	font-size: 17px;
+	font-weight: 100;
 }
 
 .display span {
@@ -59,16 +85,25 @@ button {
 	font-size: 20px;
 	cursor: pointer;
 	transition: 0.4s;
+	border-bottom: 1px solid var(--primary);
 }
 
 button:hover {
 	opacity: 0.9;
+	color: var(--primary);
 }
 
 .operators button {
 	flex: 1 1 0%;
 	background-color: var(--primary);
 	font-weight: 700;
+	border-right: 1px solid var(--dark);
+	border-top: 1px solid var(--secondary);
+	transition: 0.4s;
+}
+.operators button:hover {
+	opacity: 0.9;
+	color: var(--dark);
 }
 
 .digits {
@@ -80,4 +115,13 @@ button:hover {
 	flex: 1 1 33.333%;
 	max-width: 33.333%;
 	background-color: var(--dark);
+}
+
+.digits_middle {
+	border-left: 1px solid var(--secondary);
+	border-right: 1px solid var(--secondary);
+}
+
+.equal {
+	color:  var(--secondary);
 }

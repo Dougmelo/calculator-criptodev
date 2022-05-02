@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useEventListener from "@use-it/event-listener";
-//testando
+
 var values = [];
 var result2 = 0;
 var operator = "";
